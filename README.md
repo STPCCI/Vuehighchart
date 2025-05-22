@@ -38,3 +38,8 @@ This repository contains a simple backend API using Express and SQLite and a Nux
    ```
    The application will be available at `http://localhost:3000` and fetch data from the backend API.
 
+### Environment Variables
+
+The frontend reads the backend URL from the `API_URL` environment variable using Nuxt runtime configuration. If not provided, it defaults to `http://localhost:3001`.
+Set `API_URL` if your backend runs on a different host or port.
+

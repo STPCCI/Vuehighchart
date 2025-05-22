@@ -8,6 +8,8 @@ import Highcharts from "highcharts";
 import treemap from "highcharts/modules/treemap";
 import axios from "axios";
 
+const { public: { apiUrl } } = useRuntimeConfig();
+
 treemap(Highcharts);
 
 const chartContainer = ref(null);
@@ -16,7 +18,7 @@ const chartData = ref([]);
 
 async function fetchData() {
   try {
-    const response = await axios.get("http://localhost:3001/api/tree"); // Update the URL if your backend runs elsewhere
+    const response = await axios.get(`${apiUrl}/api/tree`);
     chartData.value = response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
